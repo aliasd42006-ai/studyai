@@ -2,250 +2,584 @@ Dr Ali.S:
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>StudyAI - دراسة بذكاء</title>
+<title>دراسة الذكاء الاصطناعي</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #172033;
-      line-height: 1.7;
-    }
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.8;
+}
 
-    header {
-      background: linear-gradient(135deg, #2563eb, #4f46e5);
-      color: white;
-      padding: 22px 18px;
-      text-align: center;
-    }
+header {
+    background: linear-gradient(135deg, #182848, #4b6cb7);
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+}
 
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+nav {
+    background: white;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #243b6b;
+    font-weight: bold;
+    margin: 5px 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: #eaf0ff;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
+.hero {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    text-align: center;
+}
+
+.hero h2 {
+    color: #294a91;
+    margin-bottom: 12px;
+}
+
+.section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+    color: #294a91;
+    margin-bottom: 15px;
+}
+
+.section h3 {
+    color: #3f5fa3;
+    margin: 15px 0 8px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #f7f9ff;
+    border: 1px solid #e1e7f5;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.card h3 {
+    margin-top: 0;
+}
+
+button {
+    border: none;
+    background: #3157a4;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #243f7a;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ccd5e8;
+    border-radius: 9px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.result {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #eef5ff;
+}
+
+.question {
+    padding: 18px;
+    background: #f8faff;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #e2e8f5;
+}
+
+.question label {
+    display: block;
+    margin: 8px 0;
+    cursor: pointer;
+}
+
+.progress {
+    background: #e5e9f2;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #3157a4;
+    transition: 0.4s;
+}
+
+footer {
+    background: #182848;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.highlight {
+    background: #fff7d6;
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
     header h1 {
-      font-size: 32px;
-      margin-bottom: 6px;
+        font-size: 25px;
     }
 
-    header p {
-      font-size: 16px;
-      opacity: 0.95;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 25px 18px;
-    }
-
+    .section,
     .hero {
-      background: white;
-      border-radius: 18px;
-      padding: 30px 20px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      margin-bottom: 25px;
+        padding: 20px;
     }
 
-    .hero h2 {
-      font-size: 26px;
-      margin-bottom: 12px;
-      color: #1d4ed8;
+    nav a {
+        font-size: 14px;
+        margin: 3px;
     }
-
-    .hero p {
-      margin-bottom: 20px;
-      color: #555;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 10px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .btn:hover {
-      background: #1d4ed8;
-    }
-
-    .section-title {
-      text-align: center;
-      margin: 25px 0 18px;
-      font-size: 24px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-      text-align: center;
-    }
-
-    .card h3 {
-      color: #2563eb;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      color: #666;
-      font-size: 14px;
-    }
-
-    .tool {
-      background: white;
-      margin-top: 25px;
-      padding: 22px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-    }
-
-    textarea {
-      width: 100%;
-      min-height: 130px;
-      margin-top: 12px;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      font-size: 15px;
-      resize: vertical;
-    }
-
-    #result {
-      margin-top: 15px;
-      padding: 15px;
-      background: #eef4ff;
-      border-radius: 10px;
-      display: none;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 35px;
-      padding: 20px;
-      background: #172033;
-      color: white;
-      font-size: 14px;
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>StudyAI</h1>
-    <p>دراسة أذكى باستخدام الذكاء الاصطناعي</p>
-  </header>
+<header>
+    <h1>دراسة الذكاء الاصطناعي</h1>
+    <p>منصة تعليمية بسيطة لتعلم وفهم الذكاء الاصطناعي</p>
+</header>
 
-  <main class="container">
+<nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#learn">التعلم</a>
+    <a href="#notes">الملاحظات</a>
+    <a href="#quiz">الاختبار</a>
+    <a href="#about">حول الموقع</a>
+</nav>
 
-    <section class="hero">
-      <h2>مرحبًا بك في StudyAI 🎓</h2>
+<div class="container">
 
-      <p>
-        منصة بسيطة تساعدك على تنظيم دراستك،
-        فهم المواد، وتحويل الملاحظات إلى أسئلة للمراجعة.
-      </p>
+    <section id="home" class="hero">
+        <h2>مرحبًا بك في StudyAI 🤖</h2>
+        <p>
+            تعلّم أساسيات الذكاء الاصطناعي بطريقة سهلة ومنظمة،
+            وسجّل ملاحظاتك واختبر معلوماتك.
+        </p>
 
-      <a href="#tool" class="btn">
-        ابدأ الآن
-      </a>
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <p id="progressText">تقدمك: 0%</p>
     </section>
 
-    <h2 class="section-title">
-      ماذا يقدم StudyAI؟
-    </h2>
+<section id="learn" class="section">
+        <h2>📚 أساسيات الذكاء الاصطناعي</h2>
 
-    <section class="cards">
-
-      <div class="card">
-        <h3>📚 تلخيص</h3>
         <p>
-          حوّل النصوص الطويلة إلى نقاط مختصرة وسهلة للمراجعة.
+            <span class="highlight">الذكاء الاصطناعي (AI)</span>
+            هو مجال من علوم الحاسوب يهتم بتطوير أنظمة قادرة على تنفيذ
+            مهام تحتاج عادةً إلى قدرات بشرية مثل التعلم والتحليل واتخاذ القرار.
         </p>
-      </div>
 
-      <div class="card">
-        <h3>🧠 فهم</h3>
-        <p>
-          ساعد نفسك على فهم المفاهيم الدراسية بطريقة منظمة.
-        </p>
-      </div>
+        <div class="card-grid">
 
-      <div class="card">
-        <h3>❓ أسئلة</h3>
-        <p>
-          أنشئ أسئلة للمراجعة واختبر معلوماتك.
-        </p>
-      </div>
+            <div class="card">
+                <h3>🤖 الذكاء الاصطناعي</h3>
+                <p>
+                    استخدام الأنظمة الحاسوبية لتنفيذ مهام ذكية وتحليل المعلومات.
+                </p>
+            </div>
 
+            <div class="card">
+                <h3>🧠 تعلم الآلة</h3>
+                <p>
+                    طريقة تجعل الحاسوب يتعلم من البيانات ويكتشف الأنماط.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📊 البيانات</h3>
+                <p>
+                    المعلومات التي تستخدمها أنظمة الذكاء الاصطناعي للتعلم والتحليل.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>💬 الذكاء التوليدي</h3>
+                <p>
+                    تقنيات قادرة على إنشاء نصوص أو صور أو محتوى جديد بناءً على المدخلات.
+                </p>
+            </div>
+
+        </div>
     </section>
 
-    <section class="tool" id="tool">
+    <section class="section">
+        <h2>🎯 خطة التعلم</h2>
 
-      <h2>أداة المراجعة السريعة</h2>
+        <div class="card-grid">
 
-      <p>
-        اكتب ملاحظاتك الدراسية في المربع ثم اضغط على الزر.
-      </p>
+            <div class="card">
+                <h3>الدرس 1</h3>
+                <p>مقدمة في الذكاء الاصطناعي</p>
+                <button onclick="completeLesson(1)">
+                    إكمال الدرس
+                </button>
+            </div>
 
-      <textarea id="notes" placeholder="اكتب ملاحظاتك هنا..."></textarea>
+            <div class="card">
+                <h3>الدرس 2</h3>
+                <p>ما هو تعلم الآلة؟</p>
+                <button onclick="completeLesson(2)">
+                    إكمال الدرس
+                </button>
+            </div>
 
-      <br><br>
+            <div class="card">
+                <h3>الدرس 3</h3>
+                <p>البيانات والخوارزميات</p>
+                <button onclick="completeLesson(3)">
+                    إكمال الدرس
+                </button>
+            </div>
 
-      <button class="btn" onclick="generateReview()">
-        إنشاء مراجعة
-      </button>
+            <div class="card">
+                <h3>الدرس 4</h3>
+                <p>تطبيقات الذكاء الاصطناعي</p>
+                <button onclick="completeLesson(4)">
+                    إكمال الدرس
+                </button>
+            </div>
 
-      <div id="result"></div>
-
+        </div>
     </section>
 
-  </main>
+    <section id="notes" class="section">
+        <h2>📝 ملاحظاتي</h2>
 
-  <footer>
-    © 2026 StudyAI - جميع الحقوق محفوظة
-  </footer>
+        <p>
+            اكتب ملاحظاتك الدراسية هنا، ثم اضغط حفظ.
+        </p>
+
+        <textarea id="notesInput"
+            placeholder="اكتب ملاحظاتك هنا..."></textarea>
+
+        <button onclick="saveNotes()">حفظ الملاحظات</button>
+        <button onclick="clearNotes()">مسح الملاحظات</button>
+
+        <div id="notesResult" class="result"></div>
+    </section>
+
+    <section id="quiz" class="section">
+        <h2>🧠 اختبار سريع</h2>
+
+        <div class="question">
+            <p><strong>1. ماذا يعني AI؟</strong></p>
+
+            <label>
+                <input type="radio" name="q1" value="a">
+                Artificial Intelligence
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="b">
+                Automatic Internet
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="c">
+                Advanced Information
+            </label>
+        </div>
+
+        <div class="question">
+            <p><strong>2. ما المجال الذي يجعل الحاسوب يتعلم من البيانات؟</strong></p>
+
+            <label>
+                <input type="radio" name="q2" value="a">
+                Machine Learning
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="b">
+                Web Design
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="c">
+                Computer Graphics
+            </label>
+        </div>
+
+        <div class="question">
+            <p><strong>3. ما الذي تحتاجه أنظمة الذكاء الاصطناعي للتعلم؟</strong></p>
+
+<label>
+                <input type="radio" name="q3" value="a">
+                البيانات
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="b">
+                الورق فقط
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="c">
+                لا تحتاج إلى أي معلومات
+            </label>
+        </div>
+
+        <button onclick="checkQuiz()">تصحيح الاختبار</button>
+
+        <div id="quizResult" class="result"></div>
+    </section>
+
+    <section class="section">
+        <h2>💡 نصيحة اليوم</h2>
+
+        <p id="tip">
+            ابدأ بتعلم الأساسيات، ثم انتقل تدريجيًا إلى المواضيع المتقدمة.
+        </p>
+
+        <button onclick="newTip()">نصيحة جديدة</button>
+    </section>
+
+    <section id="about" class="section">
+        <h2>ℹ️ حول StudyAI</h2>
+
+        <p>
+            StudyAI هو موقع تعليمي بسيط يساعد الطلاب على تنظيم
+            دراسة الذكاء الاصطناعي بطريقة سهلة.
+        </p>
+
+        <p>
+            يمكنك تطوير الموقع لاحقًا وإضافة دروس وفيديوهات واختبارات
+            وحسابات للمستخدمين وغيرها من الخصائص.
+        </p>
+    </section>
+
+</div>
+
+<footer>
+    <p>© 2026 StudyAI - جميع الحقوق محفوظة</p>
+</footer>
 
 <script>
-    function generateReview() {
 
-      const notes = document.getElementById("notes").value.trim();
-      const result = document.getElementById("result");
+let completedLessons = [];
 
-      if (notes === "") {
-        result.style.display = "block";
-        result.innerHTML = "⚠️ اكتب بعض الملاحظات أولًا.";
-        return;
-      }
+function completeLesson(number) {
 
-      result.style.display = "block";
-
-      result.innerHTML =
-        "<strong>مراجعتك:</strong><br><br>" +
-        "تم استلام ملاحظاتك بنجاح. " +
-        "هذه نسخة أولية من أداة StudyAI. " +
-        "في الخطوات القادمة سنطورها لتصبح أداة ذكاء اصطناعي حقيقية.";
+    if (!completedLessons.includes(number)) {
+        completedLessons.push(number);
     }
-  </script>
+
+    updateProgress();
+
+    alert("تم تسجيل إكمال الدرس رقم " + number + " ✅");
+}
+
+function updateProgress() {
+
+    let total = 4;
+
+    let percentage =
+        Math.round((completedLessons.length / total) * 100);
+
+    document.getElementById("progressBar").style.width =
+        percentage + "%";
+
+    document.getElementById("progressText").innerText =
+        "تقدمك: " + percentage + "%";
+}
+
+function saveNotes() {
+
+    let notes =
+        document.getElementById("notesInput").value;
+
+    if (notes.trim() === "") {
+
+        document.getElementById("notesResult").style.display =
+            "block";
+
+        document.getElementById("notesResult").innerText =
+            "⚠️ اكتب ملاحظاتك أولًا.";
+
+        return;
+    }
+
+    localStorage.setItem("studyNotes", notes);
+
+    document.getElementById("notesResult").style.display =
+        "block";
+
+    document.getElementById("notesResult").innerText =
+        "✅ تم حفظ الملاحظات بنجاح.";
+}
+
+function clearNotes() {
+
+    localStorage.removeItem("studyNotes");
+
+    document.getElementById("notesInput").value = "";
+
+    document.getElementById("notesResult").style.display =
+        "block";
+
+    document.getElementById("notesResult").innerText =
+        "تم مسح الملاحظات.";
+}
+
+window.onload = function() {
+
+    let savedNotes =
+        localStorage.getItem("studyNotes");
+
+    if (savedNotes) {
+        document.getElementById("notesInput").value =
+            savedNotes;
+    }
+
+};
+
+function checkQuiz() {
+
+    let score = 0;
+
+    let q1 =
+        document.querySelector('input[name="q1"]:checked');
+
+    let q2 =
+        document.querySelector('input[name="q2"]:checked');
+
+    let q3 =
+        document.querySelector('input[name="q3"]:checked');
+
+    if (q1 && q1.value === "a") score++;
+
+    if (q2 && q2.value === "a") score++;
+
+    if (q3 && q3.value === "a") score++;
+
+    let result =
+        document.getElementById("quizResult");
+
+    result.style.display = "block";
+
+    result.innerHTML =
+        "<strong>نتيجتك: " +
+        score +
+        " / 3</strong><br><br>" +
+        (score === 3
+            ? "🎉 ممتاز! جميع إجاباتك صحيحة."
+            : "📚 حاول مرة أخرى وراجع الدرس.");
+}
+
+const tips = [
+
+    "لا تحاول تعلم كل شيء دفعة واحدة. ابدأ بالأساسيات.",
+
+    "افهم الفكرة قبل أن تحفظ المصطلحات.",
+
+    "التطبيق العملي يساعدك على تثبيت المعلومات.",
+
+    "قسّم دراستك إلى جلسات قصيرة ومنظمة.",
+
+    "جرّب كتابة ما تعلمته بأسلوبك الخاص."
+
+];
+
+function newTip() {
+
+    let random =
+        Math.floor(Math.random() * tips.length);
+
+    document.getElementById("tip").innerText =
+        tips[random];
+}
+
+</script>
 
 </body>
-  </html>
+                  </html>
