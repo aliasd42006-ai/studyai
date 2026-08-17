@@ -1,585 +1,776 @@
 Dr Ali.S:
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>دراسة الذكاء الاصطناعي</title>
+<title>منصة طلاب الجامعة</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    font-family: Arial, Tahoma, sans-serif;
-    background: #f4f7fb;
-    color: #172033;
-    line-height: 1.8;
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    line-height:1.8;
 }
 
-header {
-    background: linear-gradient(135deg, #182848, #4b6cb7);
-    color: white;
-    padding: 45px 20px;
-    text-align: center;
+header{
+    background:linear-gradient(135deg,#182848,#4b6cb7);
+    color:white;
+    padding:45px 20px;
+    text-align:center;
 }
 
-header h1 {
-    font-size: 32px;
-    margin-bottom: 10px;
+header h1{
+    font-size:30px;
+    margin-bottom:10px;
 }
 
-header p {
-    font-size: 17px;
-    opacity: 0.9;
+header p{
+    font-size:16px;
+    opacity:.9;
 }
 
-nav {
-    background: white;
-    padding: 12px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    position: sticky;
-    top: 0;
-    z-index: 10;
+nav{
+    background:white;
+    padding:12px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
-nav a {
-    display: inline-block;
-    text-decoration: none;
-    color: #243b6b;
-    font-weight: bold;
-    margin: 5px 10px;
-    padding: 8px 12px;
-    border-radius: 8px;
+nav a{
+    display:inline-block;
+    text-decoration:none;
+    color:#243b6b;
+    font-weight:bold;
+    margin:4px;
+    padding:8px 10px;
+    border-radius:8px;
 }
 
-nav a:hover {
-    background: #eaf0ff;
+nav a:hover{
+    background:#eaf0ff;
 }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 25px 15px;
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:25px 15px;
 }
 
-.hero {
-    background: white;
-    padding: 30px;
-    border-radius: 18px;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
-    text-align: center;
+.hero{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:0 5px 20px rgba(0,0,0,.07);
+    text-align:center;
 }
 
-.hero h2 {
-    color: #294a91;
-    margin-bottom: 12px;
+.hero h2{
+    color:#294a91;
+    margin-bottom:10px;
 }
 
-.section {
-    background: white;
-    padding: 25px;
-    margin-bottom: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+.section{
+    background:white;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:16px;
+    box-shadow:0 4px 15px rgba(0,0,0,.06);
 }
 
-.section h2 {
-    color: #294a91;
-    margin-bottom: 15px;
+.section h2{
+    color:#294a91;
+    margin-bottom:15px;
 }
 
-.section h3 {
-    color: #3f5fa3;
-    margin: 15px 0 8px;
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    margin-top:20px;
 }
 
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
+.card{
+    background:#f7f9ff;
+    border:1px solid #e1e7f5;
+    border-radius:14px;
+    padding:20px;
+    transition:.2s;
 }
 
-.card {
-    background: #f7f9ff;
-    border: 1px solid #e1e7f5;
-    border-radius: 14px;
-    padding: 20px;
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
 }
 
-.card h3 {
-    margin-top: 0;
+.card h3{
+    color:#294a91;
+    margin-bottom:8px;
 }
 
-button {
-    border: none;
-    background: #3157a4;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 9px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
+.card button{
+    width:100%;
+    margin-top:12px;
 }
 
-button:hover {
-    background: #243f7a;
+button{
+    border:none;
+    background:#3157a4;
+    color:white;
+    padding:11px 18px;
+    border-radius:9px;
+    cursor:pointer;
+    font-size:15px;
 }
 
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    border: 1px solid #ccd5e8;
-    border-radius: 9px;
-    font-size: 16px;
-    font-family: inherit;
+button:hover{
+    background:#243f7a;
 }
 
-textarea {
-    min-height: 130px;
-    resize: vertical;
+.search{
+    width:100%;
+    padding:14px;
+    border:1px solid #ccd5e8;
+    border-radius:10px;
+    font-size:16px;
+    margin-bottom:20px;
 }
 
-.result {
-    display: none;
-    margin-top: 15px;
-    padding: 15px;
-    border-radius: 10px;
-    background: #eef5ff;
+.progress{
+    background:#e5e9f2;
+    height:12px;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
 }
 
-.question {
-    padding: 18px;
-    background: #f8faff;
-    border-radius: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #e2e8f5;
+.progress-bar{
+    width:0%;
+    height:100%;
+    background:#3157a4;
+    transition:.4s;
 }
 
-.question label {
-    display: block;
-    margin: 8px 0;
-    cursor: pointer;
+.badge{
+    display:inline-block;
+    background:#eaf0ff;
+    color:#3157a4;
+    padding:4px 9px;
+    border-radius:15px;
+    font-size:13px;
+    margin-top:8px;
 }
 
-.progress {
-    background: #e5e9f2;
-    height: 12px;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 15px 0;
+.price{
+    font-size:20px;
+    font-weight:bold;
+    color:#294a91;
+    margin-top:10px;
 }
 
-.progress-bar {
-    width: 0%;
-    height: 100%;
-    background: #3157a4;
-    transition: 0.4s;
+footer{
+    background:#182848;
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:30px;
 }
 
-footer {
-    background: #182848;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 30px;
+.hidden{
+    display:none;
 }
 
-.highlight {
-    background: #fff7d6;
-    padding: 3px 7px;
-    border-radius: 5px;
-    font-weight: bold;
-}
+@media(max-width:600px){
 
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 25px;
+    header h1{
+        font-size:25px;
     }
 
     .section,
-    .hero {
-        padding: 20px;
+    .hero{
+        padding:20px;
     }
 
-    nav a {
-        font-size: 14px;
-        margin: 3px;
+    nav a{
+        font-size:13px;
+        margin:2px;
     }
+
 }
+
 </style>
 </head>
 
+
 <body>
 
+
 <header>
-    <h1>دراسة الذكاء الاصطناعي</h1>
-    <p>منصة تعليمية بسيطة لتعلم وفهم الذكاء الاصطناعي</p>
+
+<h1>🎓 منصة طلاب الجامعة</h1>
+
+<p>
+منصة تعليمية تجمع المحاضرات والمصادر والملخصات والاختبارات
+</p>
+
 </header>
 
+
 <nav>
-    <a href="#home">الرئيسية</a>
-    <a href="#learn">التعلم</a>
-    <a href="#notes">الملاحظات</a>
-    <a href="#quiz">الاختبار</a>
-    <a href="#about">حول الموقع</a>
+
+<a href="#home">🏠 الرئيسية</a>
+
+<a href="#subjects">📚 المواد</a>
+
+<a href="#lectures">📖 المحاضرات</a>
+
+<a href="#sources">📄 المصادر</a>
+
+<a href="#tests">🧠 الاختبارات</a>
+
+<a href="#store">🛒 المتجر</a>
+
 </nav>
+
 
 <div class="container">
 
-    <section id="home" class="hero">
-        <h2>مرحبًا بك في StudyAI 🤖</h2>
-        <p>
-            تعلّم أساسيات الذكاء الاصطناعي بطريقة سهلة ومنظمة،
-            وسجّل ملاحظاتك واختبر معلوماتك.
-        </p>
 
-        <div class="progress">
-            <div class="progress-bar" id="progressBar"></div>
-        </div>
+<!-- الرئيسية -->
 
-        <p id="progressText">تقدمك: 0%</p>
-    </section>
+<section id="home" class="hero">
 
-<section id="learn" class="section">
-        <h2>📚 أساسيات الذكاء الاصطناعي</h2>
+<h2>مرحباً بك في منصة الطلاب 👋</h2>
 
-        <p>
-            <span class="highlight">الذكاء الاصطناعي (AI)</span>
-            هو مجال من علوم الحاسوب يهتم بتطوير أنظمة قادرة على تنفيذ
-            مهام تحتاج عادةً إلى قدرات بشرية مثل التعلم والتحليل واتخاذ القرار.
-        </p>
+<p>
+كل ما تحتاجه لدراستك في مكان واحد.
+</p>
 
-        <div class="card-grid">
+<div class="progress">
 
-            <div class="card">
-                <h3>🤖 الذكاء الاصطناعي</h3>
-                <p>
-                    استخدام الأنظمة الحاسوبية لتنفيذ مهام ذكية وتحليل المعلومات.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>🧠 تعلم الآلة</h3>
-                <p>
-                    طريقة تجعل الحاسوب يتعلم من البيانات ويكتشف الأنماط.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>📊 البيانات</h3>
-                <p>
-                    المعلومات التي تستخدمها أنظمة الذكاء الاصطناعي للتعلم والتحليل.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>💬 الذكاء التوليدي</h3>
-                <p>
-                    تقنيات قادرة على إنشاء نصوص أو صور أو محتوى جديد بناءً على المدخلات.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="section">
-        <h2>🎯 خطة التعلم</h2>
-
-        <div class="card-grid">
-
-            <div class="card">
-                <h3>الدرس 1</h3>
-                <p>مقدمة في الذكاء الاصطناعي</p>
-                <button onclick="completeLesson(1)">
-                    إكمال الدرس
-                </button>
-            </div>
-
-            <div class="card">
-                <h3>الدرس 2</h3>
-                <p>ما هو تعلم الآلة؟</p>
-                <button onclick="completeLesson(2)">
-                    إكمال الدرس
-                </button>
-            </div>
-
-            <div class="card">
-                <h3>الدرس 3</h3>
-                <p>البيانات والخوارزميات</p>
-                <button onclick="completeLesson(3)">
-                    إكمال الدرس
-                </button>
-            </div>
-
-            <div class="card">
-                <h3>الدرس 4</h3>
-                <p>تطبيقات الذكاء الاصطناعي</p>
-                <button onclick="completeLesson(4)">
-                    إكمال الدرس
-                </button>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="notes" class="section">
-        <h2>📝 ملاحظاتي</h2>
-
-        <p>
-            اكتب ملاحظاتك الدراسية هنا، ثم اضغط حفظ.
-        </p>
-
-        <textarea id="notesInput"
-            placeholder="اكتب ملاحظاتك هنا..."></textarea>
-
-        <button onclick="saveNotes()">حفظ الملاحظات</button>
-        <button onclick="clearNotes()">مسح الملاحظات</button>
-
-        <div id="notesResult" class="result"></div>
-    </section>
-
-    <section id="quiz" class="section">
-        <h2>🧠 اختبار سريع</h2>
-
-        <div class="question">
-            <p><strong>1. ماذا يعني AI؟</strong></p>
-
-            <label>
-                <input type="radio" name="q1" value="a">
-                Artificial Intelligence
-            </label>
-
-            <label>
-                <input type="radio" name="q1" value="b">
-                Automatic Internet
-            </label>
-
-            <label>
-                <input type="radio" name="q1" value="c">
-                Advanced Information
-            </label>
-        </div>
-
-        <div class="question">
-            <p><strong>2. ما المجال الذي يجعل الحاسوب يتعلم من البيانات؟</strong></p>
-
-            <label>
-                <input type="radio" name="q2" value="a">
-                Machine Learning
-            </label>
-
-            <label>
-                <input type="radio" name="q2" value="b">
-                Web Design
-            </label>
-
-            <label>
-                <input type="radio" name="q2" value="c">
-                Computer Graphics
-            </label>
-        </div>
-
-        <div class="question">
-            <p><strong>3. ما الذي تحتاجه أنظمة الذكاء الاصطناعي للتعلم؟</strong></p>
-
-<label>
-                <input type="radio" name="q3" value="a">
-                البيانات
-            </label>
-
-            <label>
-                <input type="radio" name="q3" value="b">
-                الورق فقط
-            </label>
-
-            <label>
-                <input type="radio" name="q3" value="c">
-                لا تحتاج إلى أي معلومات
-            </label>
-        </div>
-
-        <button onclick="checkQuiz()">تصحيح الاختبار</button>
-
-        <div id="quizResult" class="result"></div>
-    </section>
-
-    <section class="section">
-        <h2>💡 نصيحة اليوم</h2>
-
-        <p id="tip">
-            ابدأ بتعلم الأساسيات، ثم انتقل تدريجيًا إلى المواضيع المتقدمة.
-        </p>
-
-        <button onclick="newTip()">نصيحة جديدة</button>
-    </section>
-
-    <section id="about" class="section">
-        <h2>ℹ️ حول StudyAI</h2>
-
-        <p>
-            StudyAI هو موقع تعليمي بسيط يساعد الطلاب على تنظيم
-            دراسة الذكاء الاصطناعي بطريقة سهلة.
-        </p>
-
-        <p>
-            يمكنك تطوير الموقع لاحقًا وإضافة دروس وفيديوهات واختبارات
-            وحسابات للمستخدمين وغيرها من الخصائص.
-        </p>
-    </section>
+<div
+class="progress-bar"
+id="progressBar">
+</div>
 
 </div>
 
+<p id="progressText">
+تقدمك الدراسي: 0%
+</p>
+
+</section>
+
+
+<!-- البحث -->
+
+<section class="section">
+
+<h2>🔎 البحث</h2>
+
+<input
+class="search"
+id="searchInput"
+type="text"
+placeholder="ابحث عن مادة أو محاضرة أو مصدر..."
+onkeyup="searchContent()">
+
+<div id="searchResult"></div>
+
+</section>
+
+
+<!-- المواد -->
+
+<section id="subjects" class="section">
+
+<h2>📚 المواد الدراسية</h2>
+
+<div class="card-grid">
+
+
+<
+
+div class="card">
+
+<h3>🫀 التشريح</h3>
+
+<p>
+محاضرات ومصادر مادة التشريح.
+</p>
+
+<span class="badge">
+مواد دراسية
+</span>
+
+<button onclick="openSubject('التشريح')">
+دخول المادة
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🩸 فسلجة الدم</h3>
+
+<p>
+محاضرات ومصادر فسلجة الدم.
+</p>
+
+<span class="badge">
+مواد دراسية
+</span>
+
+<button onclick="openSubject('فسلجة الدم')">
+دخول المادة
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🧪 الكيمياء</h3>
+
+<p>
+محاضرات ومصادر الكيمياء.
+</p>
+
+<span class="badge">
+مواد دراسية
+</span>
+
+<button onclick="openSubject('الكيمياء')">
+دخول المادة
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🦠 الأحياء</h3>
+
+<p>
+محاضرات ومصادر الأحياء.
+</p>
+
+<span class="badge">
+مواد دراسية
+</span>
+
+<button onclick="openSubject('الأحياء')">
+دخول المادة
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- المحاضرات -->
+
+<section id="lectures" class="section">
+
+<h2>📖 أحدث المحاضرات</h2>
+
+<div class="card-grid">
+
+
+<div class="card">
+
+<h3>🩸 فسلجة الدم</h3>
+
+<p>
+المحاضرة الأولى
+</p>
+
+<span class="badge">
+Lecture 1
+</span>
+
+<button onclick="completeLecture()">
+فتح المحاضرة
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🫀 تشريح القلب</h3>
+
+<p>
+Heart Anatomy
+</p>
+
+<span class="badge">
+Lecture 1
+</span>
+
+<button onclick="completeLecture()">
+فتح المحاضرة
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🧪 الكيمياء</h3>
+
+<p>
+Introduction to Chemistry
+</p>
+
+<span class="badge">
+Lecture 1
+</span>
+
+<button onclick="completeLecture()">
+فتح المحاضرة
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- المصادر -->
+
+<section id="sources" class="section">
+
+<h2>📄 المصادر والملفات</h2>
+
+<div class="card-grid">
+
+
+<div class="card">
+
+<h3>📘 المصادر الدراسية</h3>
+
+<p>
+الكتب والمصادر المعتمدة لكل مادة.
+</p>
+
+<button onclick="showMessage('سيتم إضافة المصادر هنا لاحقاً 📚')">
+عرض المصادر
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>📝 الملخصات</h3>
+
+<p>
+ملخصات مرتبة تساعد الطالب على المراجعة.
+</p>
+
+<button onclick="showMessage('سيتم إضافة الملخصات هنا لاحقاً 📝')">
+عرض الملخصات
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- الاختبارات -->
+
+<section id="tests" class="section">
+
+<h2>🧠 الاختبارات</h2>
+
+<div class="card-grid">
+
+
+<div class="card">
+
+<h3>🩸 اختبار فسلجة الدم</h3>
+
+<p>
+اختبر معلوماتك في المادة.
+</p>
+
+<button onclick="startTest('فسلجة الدم')">
+بدء الاختبار
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>🫀 اختبار التشريح</h3>
+
+<p>
+أسئلة MCQ للمراجعة.
+</p>
+
+<button onclick="startTest('التشريح')">
+بدء الاختبار
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- المتجر -->
+
+<section id="store" class="section">
+
+<h2>🛒 متجر الطلاب</h2>
+
+<p>
+هنا سيتم توفير المنتجات والمواد التعليمية المدفوعة.
+</p>
+
+
+<div class="card-grid">
+
+
+<div class="card">
+
+<h3>📕 ملزمة فسلجة الدم</h3>
+
+<p>
+ملزمة مرتبة للمراجعة والدراسة.
+</p>
+
+<div class="price">
+$5
+</div>
+
+<button onclick="buyProduct('ملزمة فسلجة الدم')">
+شراء
+</button>
+
+</div>
+
+
+<div class="card">
+
+<h3>📚 حزمة المحاضرات</h3>
+
+<p>
+مجموعة محاضرات وملخصات.
+</p>
+
+<div class="price">
+$10
+</div>
+
+<button onclick="buyProduct('حزمة المحاضرات')">
+شراء
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- الحساب -->
+
+<section class="section">
+
+<h2>👤 حساب الطالب</h2>
+
+<p>
+نظام حسابات الطلاب سيتم إضافته في مرحلة لاحقة.
+</p>
+
+<button onclick="showMessage('سيتم تفعيل حسابات الطلاب لاحقاً 👤')">
+تسجيل الدخول
+</button>
+
+</section>
+
+
+</div>
+
+
 <footer>
-    <p>© 2026 StudyAI - جميع الحقوق محفوظة</p>
+
+<p>
+© 2026 منصة طلاب الجامعة
+</p>
+
+<p>
+جميع الحقوق محفوظة
+</p>
+
 </footer>
+
 
 <script>
 
-let completedLessons = [];
 
-function completeLesson(number) {
+let progress = 0;
 
-    if (!completedLessons.includes(number)) {
-        completedLessons.push(number);
+
+function completeLecture(){
+
+    if(progress < 100){
+
+        progress += 10;
+
     }
 
     updateProgress();
 
-    alert("تم تسجيل إكمال الدرس رقم " + number + " ✅");
+    alert("تم تسجيل المحاضرة كمكتملة ✅");
+
 }
 
-function updateProgress() {
 
-    let total = 4;
-
-    let percentage =
-        Math.round((completedLessons.length / total) * 100);
+function updateProgress(){
 
     document.getElementById("progressBar").style.width =
-        percentage + "%";
+        progress + "%";
 
     document.getElementById("progressText").innerText =
-        "تقدمك: " + percentage + "%";
+        "تقدمك الدراسي: " + progress + "%";
+
 }
 
-function saveNotes() {
 
-    let notes =
-        document.getElementById("notesInput").value;
+function openSubject(subject){
 
-    if (notes.trim() === "") {
+    alert(
+        "تم اختيار مادة: " +
+        subject +
+        "\n\nسنضيف محاضرات المادة ومصادرها هنا."
+    );
 
-        document.getElementById("notesResult").style.display =
-            "block";
-
-        document.getElementById("notesResult").innerText =
-            "⚠️ اكتب ملاحظاتك أولًا.";
-
-        return;
-    }
-
-    localStorage.setItem("studyNotes", notes);
-
-    document.getElementById("notesResult").style.display =
-        "block";
-
-    document.getElementById("notesResult").innerText =
-        "✅ تم حفظ الملاحظات بنجاح.";
 }
 
-function clearNotes() {
 
-    localStorage.removeItem("studyNotes");
+function startTest(subject){
 
-    document.getElementById("notesInput").value = "";
+    alert(
+        "اختبار " +
+        subject +
+        "\n\nسيتم إضافة أسئلة MCQ هنا."
+    );
 
-    document.getElementById("notesResult").style.display =
-        "block";
-
-    document.getElementById("notesResult").innerText =
-        "تم مسح الملاحظات.";
 }
 
-window.onload = function() {
 
-    let savedNotes =
-        localStorage.getItem("studyNotes");
+function showMessage(message){
 
-    if (savedNotes) {
-        document.getElementById("notesInput").value =
-            savedNotes;
-    }
+    alert(message);
 
-};
+}
 
-function checkQuiz() {
 
-    let score = 0;
+funct
 
-    let q1 =
-        document.querySelector('input[name="q1"]:checked');
+ion buyProduct(product){
 
-    let q2 =
-        document.querySelector('input[name="q2"]:checked');
+    alert(
+        "المنتج: " +
+        product +
+        "\n\nسيتم إضافة نظام الدفع والشراء لاحقاً."
+    );
 
-    let q3 =
-        document.querySelector('input[name="q3"]:checked');
+}
 
-    if (q1 && q1.value === "a") score++;
 
-    if (q2 && q2.value === "a") score++;
+function searchContent(){
 
-    if (q3 && q3.value === "a") score++;
+    let input =
+        document.getElementById("searchInput").value
+        .toLowerCase();
 
     let result =
-        document.getElementById("quizResult");
+        document.getElementById("searchResult");
 
-    result.style.display = "block";
 
-    result.innerHTML =
-        "<strong>نتيجتك: " +
-        score +
-        " / 3</strong><br><br>" +
-        (score === 3
-            ? "🎉 ممتاز! جميع إجاباتك صحيحة."
-            : "📚 حاول مرة أخرى وراجع الدرس.");
+    if(input.trim() === ""){
+
+        result.innerHTML = "";
+
+        return;
+
+    }
+
+
+    let subjects = [
+
+        "التشريح",
+        "فسلجة الدم",
+        "الكيمياء",
+        "الأحياء",
+        "تشريح القلب",
+        "المحاضرات",
+        "الملخصات",
+        "المصادر",
+        "الاختبارات"
+
+    ];
+
+
+    let matches =
+        subjects.filter(function(item){
+
+            return item.toLowerCase().includes(input);
+
+        });
+
+
+    if(matches.length > 0){
+
+        result.innerHTML =
+            "🔎 النتائج:<br><strong>" +
+            matches.join(" — ") +
+            "</strong>";
+
+    }else{
+
+        result.innerHTML =
+            "❌ لم يتم العثور على نتيجة.";
+
+    }
+
 }
 
-const tips = [
-
-    "لا تحاول تعلم كل شيء دفعة واحدة. ابدأ بالأساسيات.",
-
-    "افهم الفكرة قبل أن تحفظ المصطلحات.",
-
-    "التطبيق العملي يساعدك على تثبيت المعلومات.",
-
-    "قسّم دراستك إلى جلسات قصيرة ومنظمة.",
-
-    "جرّب كتابة ما تعلمته بأسلوبك الخاص."
-
-];
-
-function newTip() {
-
-    let random =
-        Math.floor(Math.random() * tips.length);
-
-    document.getElementById("tip").innerText =
-        tips[random];
-}
 
 </script>
 
+
 </body>
-                  </html>
+
+    </html>
