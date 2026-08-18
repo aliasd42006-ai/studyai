@@ -1,12 +1,15 @@
+Dr Ali.S:
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>المواد الدراسية</title>
+<title>المواد الدراسية | منصة طلاب الجامعة</title>
 
 <style>
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,64 +23,118 @@ body {
     line-height: 1.8;
 }
 
+/* Header */
+
 header {
     background: linear-gradient(135deg, #182848, #4b6cb7);
     color: white;
+    padding: 45px 20px;
     text-align: center;
-    padding: 35px 20px;
 }
 
 header h1 {
-    font-size: 30px;
-    margin-bottom: 8px;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
 header p {
-    font-size: 16px;
+    font-size: 17px;
+    opacity: 0.92;
 }
+
+/* Navigation */
+
+nav {
+    background: white;
+    padding: 14px 10px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #243b6b;
+    font-weight: bold;
+    margin: 5px 7px;
+    padding: 9px 14px;
+    border-radius: 9px;
+    transition: 0.2s;
+}
+
+nav a:hover {
+    background: #eaf0ff;
+}
+
+/* Main */
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
-    padding: 25px 15px;
-}
-
-.back {
-    display: inline-block;
-    background: white;
-    color: #294a91;
-    text-decoration: none;
-    padding: 10px 18px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    font-weight: bold;
+    padding: 30px 15px;
 }
 
 .section {
     background: white;
-    padding: 25px;
+    padding: 28px;
     margin-bottom: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
 }
 
 .section h2 {
     color: #294a91;
-    margin-bottom: 18px;
+    margin-bottom: 8px;
 }
+
+.subtitle {
+    color: #667085;
+    margin-bottom: 25px;
+}
+
+/* Search */
+
+.search-box {
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #d9e1f0;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #3157a4;
+}
+
+/* Cards */
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
 }
 
 .card {
-    background: #f7f9ff;
+    background: #f8faff;
     border: 1px solid #e1e7f5;
-    border-radius: 14px;
-    padding: 20px;
-    text-align: center;
+    border-radius: 16px;
+    padding: 24px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card .icon {
+    font-size: 38px;
+    margin-bottom: 10px;
 }
 
 .card h3 {
@@ -87,135 +144,278 @@ header p {
 
 .card p {
     color: #555;
+    margin-bottom: 18px;
+    min-height: 55px;
 }
 
 button {
+    width: 100%;
     border: none;
     background: #3157a4;
     color: white;
-    padding: 10px 18px;
+    padding: 11px 18px;
     border-radius: 9px;
     cursor: pointer;
     font-size: 15px;
-    margin-top: 12px;
+    font-weight: bold;
+    transition: 0.2s;
 }
 
 button:hover {
     background: #243f7a;
 }
 
+/* Footer */
+
 footer {
     background: #182848;
     color: white;
     text-align: center;
-    padding: 22px;
+    padding: 25px;
     margin-top: 30px;
 }
 
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 25px;
-    }
+/* Message */
 
-    .section {
-        padding: 20px;
-    }
+.message {
+    display: none;
+    background: #eef4ff;
+    border: 1px solid #cddcff;
+    color: #294a91;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 20px;
+    text-align: center;
 }
+
 </style>
 </head>
 
 <body>
 
 <header>
-    <h1>📚 المواد الدراسية</h1>
-    <p>منصة طلاب الجامعة</p>
+
+<h1>📚 منصة طلاب الجامعة</h1>
+
+<p>
+المواد الدراسية والمحاضرات والملخصات والمصادر والاختبارات
+</p>
+
 </header>
+
+<nav>
+
+<a href="index.html">🏠 الرئيسية</a>
+
+<a href="materials.html">📚 المواد</a>
+
+<a href="#">📖 المحاضرات</a>
+
+<a href="#">🧠 الاختبارات</a>
+
+<a href="#">📄 المصادر</a>
+
+<a href="#">🛒 المتجر</a>
+
+</nav>
 
 <div class="container">
 
-<a href="index.html" class="back">⬅️ العودة إلى الرئيسية</a>
-
 <section class="section">
 
-<h2>🎓 اختر المرحلة الدراسية</h2>
+<h2>🎓 المواد الدراسية</h2>
 
-<div class="card-grid">
+<p class="subtitle">
+اختر المادة للوصول إلى محتواها الدراسي.
+</p>
 
-<div class="card">
-<h3>المرحلة الأولى</h3>
-<p>المواد الدراسية للمرحلة الأولى</p>
-<button>الدخول</button>
-</div>
+<div class="search-box">
 
-<div class="card">
-<h3>المرحلة الثانية</h3>
-<p>المواد الدراسية للمرحلة الثانية</p>
-<button>الدخول</button>
-</div>
-
-<div class="card">
-<h3>المرحلة الثالثة</h3>
-<p>المواد الدراسية للمرحلة الثالثة</p>
-<button>الدخول</button>
-</div>
-
-<div class="card">
-<h3>المرحلة الرابعة</h3>
-<p>المواد الدراسية للمرحلة الرابعة</p>
-<button>الدخول</button>
-</div>
-
-<div class="card">
-<h3>المرحلة الخامسة</h3>
-<p>المواد الدراسية للمرحلة الخامسة</p>
-<button>الدخول</button>
-</div>
-
-<div class="card">
-<h3>المرحلة السادسة</h3>
-<p>المواد الدراسية للمرحلة السادسة</p>
-<button>الدخول</button>
-</div>
+<input
+type="text"
+id="searchInput"
+placeholder="🔎 ابحث عن مادة..."
+onkeyup="searchSubjects()"
+>
 
 </div>
 
-</section>
+<div class="card-grid" id="subjects">
 
-<section class="section">
+<!-- Anatomy -->
 
-<h2>📖 المواد الأكثر أهمية</h2>
+<div class="card" data-name="التشريح">
 
-<div class="card-grid">
+<div class="icon">🫀</div>
 
-<div class="card">
-<h3>🫀 Anatomy</h3>
-<p>التشريح</p>
-</div>
+<h3>التشريح</h3>
 
-<div class="card">
-<h3>🧠 Physiology</h3>
-<p>علم وظائف الأعضاء</p>
-</div>
+<p>
+محاضرات وملخصات وأسئلة ومصادر مادة التشريح.
+</p>
 
-<div class="card">
-<h3>🧪 Biochemistry</h3>
-<p>الكيمياء الحياتية</p>
-</div>
-
-<div class="card">
-<h3>🔬 Histology</h3>
-<p>علم الأنسجة</p>
-</div>
+<button onclick="openSubject('التشريح')">
+دخول إلى المادة
+</button>
 
 </div>
+
+<!-- Blood Physiology -->
+
+<div class="card" data-name="فسلجة الدم">
+
+<div class="icon">🩸</div>
+
+<h3>فسلجة الدم</h3>
+
+<p>
+محاضرات ومصادر وملخصات وأسئلة فسلجة الدم.
+</p>
+
+<button onclick="openSubject('فسلجة الدم')">
+دخول إلى المادة
+</button>
+
+</div>
+
+<!-- Biology -->
+
+<div class="card" data-name="الأحياء">
+
+<div class="icon">🧬</div>
+
+<h3>الأحياء</h3>
+
+<p>
+المحاضرات والملخصات والأسئلة الخاصة بالأحياء.
+</p>
+
+<button onclick="openSubject('الأحياء')">
+دخول إلى المادة
+</button>
+
+</div>
+
+<!-- Chemistry -->
+
+<div class="card" data-name="الكيمياء">
+
+<div class="icon">🧪</div>
+
+<h3>الكيمياء</h3>
+
+<p>
+محاضرات ومصادر وأسئلة مادة الكيمياء.
+</p>
+
+<button onclick="openSubject('الكيمياء')">
+دخول إلى المادة
+</button>
+
+</div>
+
+<!-- GI Physiology -->
+
+<div class="card" data-name="فسلجة الجهاز الهضمي">
+
+<div class="icon">🍽️</div>
+
+<h3>فسلجة الجهاز الهضمي</h3>
+
+<p>
+محاضرات وملخصات ومصادر وأسئلة الجهاز الهضمي.
+</p>
+
+<button onclick="openSubject('فسلجة الجهاز الهضمي')">
+دخول إلى المادة
+</button>
+
+</div>
+
+<!-- New Subject -->
+
+<div class="card" data-name="مادة جديدة">
+
+<div class="icon">📚</div>
+
+<h3>مادة جديدة</h3>
+
+<p>
+يمكن إضافة مواد دراسية أخرى إلى المنصة لاحقًا.
+</p>
+
+<button onclick="openSubject('مادة جديدة')">
+دخول إلى المادة
+</button>
+
+</div>
+
+</div>
+
+<div id="message" class="message"></div>
 
 </section>
 
 </div>
 
 <footer>
-<p>© 2026 منصة طلاب الجامعة</p>
+
+<p>
+© 2026 منصة طلاب الجامعة
+</p>
+
 </footer>
 
+<script>
+
+function openSubject(subject) {
+
+    const message = document.getElementById("message");
+
+    message.style.display = "block";
+
+    message.innerHTML =
+        "📚 <strong>" + subject + "</strong><br>" +
+        "سيتم تجهيز صفحة هذه المادة بالمحاضرات والملخصات والمصادر والاختبارات.";
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+}
+
+
+function searchSubjects() {
+
+    const input =
+        document.getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".card");
+
+    cards.forEach(function(card) {
+
+        const name =
+            card.getAttribute("data-name").toLowerCase();
+
+        if (name.includes(input)) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
+
 </body>
+
 </html>
