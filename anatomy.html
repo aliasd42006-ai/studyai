@@ -1,1 +1,342 @@
 
+Dr Ali.S:
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>التشريح | منصة طلاب الجامعة</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+    line-height: 1.8;
+}
+
+header {
+    background: linear-gradient(135deg, #182848, #4b6cb7);
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 17px;
+}
+
+nav {
+    background: white;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #243b6b;
+    font-weight: bold;
+    margin: 5px 7px;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background: #eaf0ff;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
+.section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.section h2 {
+    color: #294a91;
+    margin-bottom: 15px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #f8faff;
+    border: 1px solid #e1e7f5;
+    border-radius: 14px;
+    padding: 22px;
+}
+
+.card h3 {
+    color: #294a91;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    border: none;
+    background: #3157a4;
+    color: white;
+    padding: 11px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #243f7a;
+}
+
+.back {
+    display: inline-block;
+    text-decoration: none;
+    background: white;
+    color: #294a91;
+    padding: 10px 16px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.message {
+    display: none;
+    margin-top: 20px;
+    background: #eef4ff;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+footer {
+    background: #182848;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🫀 مادة التشريح</h1>
+
+<p>
+Anatomy | منصة طلاب الجامعة
+</p>
+
+</header>
+
+<nav>
+
+<a href="index.html">🏠 الرئيسية</a>
+
+<a href="materials.html">📚 المواد</a>
+
+<a href="anatomy.html">🫀 التشريح</a>
+
+</nav>
+
+<div class="container">
+
+<a href="materials.html" class="back">
+⬅️ العودة إلى المواد
+</a>
+
+<section class="section">
+
+<h2>🫀 مادة التشريح</h2>
+
+<p>
+مرحبًا بك في صفحة مادة التشريح.
+هنا سيتم جمع المحاضرات والمصادر والملخصات والاختبارات في مكان واحد.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2>📖 المحاضرات</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>المحاضرة 1</h3>
+
+<p>
+سيتم وضع عنوان ومحتوى المحاضرة هنا.
+</p>
+
+<button onclick="showMessage('المحاضرة الأولى سيتم إضافتها قريبًا.')">
+فتح المحاضرة
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>المحاضرة 2</h3>
+
+<p>
+سيتم وضع عنوان ومحتوى المحاضرة هنا.
+</p>
+
+<button onclick="showMessage('المحاضرة الثانية سيتم إضافتها قريبًا.')">
+فتح المحاضرة
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>المحاضرة 3</h3>
+
+<p>
+سيتم وضع عنوان ومحتوى المحاضرة هنا.
+</p>
+
+<button onclick="showMessage('المحاضرة الثالثة سيتم إضافتها قريبًا.')">
+فتح المحاضرة
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>📄 المصادر</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>📘 المصادر الدراسية</h3>
+
+<p>
+سيتم إضافة الكتب والمصادر المعتمدة هنا.
+</p>
+
+<button onclick="showMessage('سيتم إضافة المصادر قريبًا.')">
+عرض المصادر
+</button>
+
+</div>
+
+<div class="card">
+
+<h3>📝 الملخصات</h3>
+
+<p>
+ملخصات مادة التشريح للمراجعة.
+</p>
+
+<button onclick="showMessage('سيتم إضافة الملخصات قريبًا.')">
+عرض الملخصات
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🧠 الاختبارات</h2>
+
+<div class="card-grid">
+
+<div class="card">
+
+<h3>اختبار التشريح</h3>
+
+<p>
+أسئلة MCQ لمراجعة المادة.
+</p>
+
+<button onclick=
+
+"showMessage('سيتم إضافة اختبار التشريح قريبًا.')">
+بدء الاختبار
+</button>
+
+</div>
+
+</div>
+
+<div id="message" class="message"></div>
+
+</section>
+
+</div>
+
+<footer>
+
+<p>
+© 2026 منصة طلاب الجامعة
+</p>
+
+</footer>
+
+<script>
+
+function showMessage(text) {
+
+    const message =
+        document.getElementById("message");
+
+    message.style.display = "block";
+
+    message.innerHTML =
+        "✅ " + text;
+
+    message.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>
